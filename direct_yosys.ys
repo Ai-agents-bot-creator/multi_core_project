@@ -1,0 +1,2 @@
+read_verilog -formal -sv L1_cache_mem.sv cache_interface.sv cache_controller.sv
+prep -top cache_controller

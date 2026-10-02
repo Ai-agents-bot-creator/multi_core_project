@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960">
+<rect width="1600" height="960" fill="#0f172a"/>
+<rect x="50" y="42" width="1500" height="540" rx="14" fill="#111827" stroke="#334155" stroke-width="3"/>
+<circle cx="86" cy="78" r="10" fill="#ef4444"/><circle cx="118" cy="78" r="10" fill="#f59e0b"/><circle cx="150" cy="78" r="10" fill="#22c55e"/>
+<text x="205" y="86" font-family="sans-serif" font-size="25px" fill="#e2e8f0" font-weight="700">Integrated cache/coherence regression</text>
+<text x="85" y="140" font-family="monospace" font-size="23px" font-weight="400" fill="#86efac">FINAL CHECKS</text>
+<text x="85" y="179" font-family="monospace" font-size="23px" font-weight="400" fill="#86efac">PASS: T0 L1 0x01 is MODIFIED after final store</text>
+<text x="85" y="218" font-family="monospace" font-size="23px" font-weight="400" fill="#86efac">PASS: T1 L1 0x15 is EXCLUSIVE</text>
+<text x="85" y="257" font-family="monospace" font-size="23px" font-weight="400" fill="#86efac">PASS: T0 L1 0x40 is MODIFIED</text>
+<text x="85" y="296" font-family="monospace" font-size="23px" font-weight="400" fill="#86efac">PASS: T0 L2 SET1 directory for 0x40 is DIR_M owner=0</text>
+<text x="85" y="335" font-family="monospace" font-size="23px" font-weight="400" fill="#86efac">PASS: T1 L1 0x80 is EXCLUSIVE (fetched cold from T0 bank)</text>
+<text x="85" y="374" font-family="monospace" font-size="23px" font-weight="400" fill="#86efac">PASS: T0 L2 SET2 directory for 0x80 is DIR_E owner=1</text>
+<text x="85" y="413" font-family="monospace" font-size="23px" font-weight="400" fill="#86efac">PASS: T0 L1 0x01 is MODIFIED after local upgrade</text>
+<text x="85" y="452" font-family="monospace" font-size="23px" font-weight="400" fill="#86efac">--- done ---</text>
+<text x="85" y="491" font-family="monospace" font-size="23px" font-weight="400" fill="#86efac">Verilator exit code: 0</text>
+<rect x="50" y="630" width="1500" height="250" rx="14" fill="#052e16" stroke="#16a34a" stroke-width="3"/>
+<text x="85" y="680" font-family="sans-serif" font-size="25px" fill="#bbf7d0" font-weight="700">Bounded formal directory-policy proof</text>
+<text x="85" y="730" font-family="monospace" font-size="24px" font-weight="400" fill="#dcfce7">Solver: z3</text>
+<text x="85" y="768" font-family="monospace" font-size="24px" font-weight="400" fill="#dcfce7">Bound: 20 clock steps</text>
+<text x="85" y="806" font-family="monospace" font-size="24px" font-weight="400" fill="#dcfce7">Checking assertions in steps 0..19</text>
+<text x="85" y="844" font-family="monospace" font-size="24px" font-weight="400" fill="#dcfce7">Status: PASSED</text>
+</svg>

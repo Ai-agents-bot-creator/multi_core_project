@@ -1,0 +1,757 @@
+%Warning-DECLFILENAME: cache_interface.sv:3:11: Filename 'cache_interface' does not match IFACE name: 'cache_v1'
+    3 | interface cache_v1();
+      |           ^~~~~~~~
+                       ... For warning description see https://verilator.org/warn/DECLFILENAME?v=5.020
+                       ... Use "/* verilator lint_off DECLFILENAME */" and lint_on around source to disable this message.
+%Warning-DECLFILENAME: L2_cache_interface.sv:4:11: Filename 'L2_cache_interface' does not match IFACE name: 'L2_cache'
+    4 | interface L2_cache();
+      |           ^~~~~~~~
+%Warning-DECLFILENAME: L2_cache_controller.sv:4:8: Filename 'L2_cache_controller' does not match MODULE name: 'l2_cache_controller'
+    4 | module l2_cache_controller #(
+      |        ^~~~~~~~~~~~~~~~~~~
+%Warning-DECLFILENAME: NIC.sv:5:8: Filename 'NIC' does not match MODULE name: 'nic_top'
+    5 | module nic_top(
+      |        ^~~~~~~
+%Warning-DECLFILENAME: Router.sv:2:8: Filename 'Router' does not match MODULE name: 'fifo_in'
+    2 | module fifo_in (
+      |        ^~~~~~~
+%Warning-DECLFILENAME: Mux_interface.sv:3:11: Filename 'Mux_interface' does not match IFACE name: 'Mux_inf'
+    3 | interface Mux_inf();
+      |           ^~~~~~~
+%Warning-DECLFILENAME: Mux.sv:4:8: Filename 'Mux' does not match MODULE name: 'mux'
+    4 | module mux #(parameter logic [1:0] MY_BANK_ID = 2'd0) (
+      |        ^~~
+%Warning-DECLFILENAME: mem.sv:4:8: Filename 'mem' does not match MODULE name: 'mem_tap'
+    4 | module mem_tap #(parameter logic [2:0] MEM_ID = 3'd4) (
+      |        ^~~~~~~
+%Warning-DECLFILENAME: tile.sv:4:8: Filename 'tile' does not match MODULE name: 'tile_top'
+    4 | module tile_top #(
+      |        ^~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:136:10: Cell pin connected by name with empty reference: 'fifo_full'
+  136 |         .fifo_full(), .fifo_empty()
+      |          ^~~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:136:24: Cell pin connected by name with empty reference: 'fifo_empty'
+  136 |         .fifo_full(), .fifo_empty()
+      |                        ^~~~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:151:10: Cell pin connected by name with empty reference: 'dbg_l_dest'
+  151 |         .dbg_l_dest(), .dbg_c_dest(), .dbg_cc_dest(),
+      |          ^~~~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:151:25: Cell pin connected by name with empty reference: 'dbg_c_dest'
+  151 |         .dbg_l_dest(), .dbg_c_dest(), .dbg_cc_dest(),
+      |                         ^~~~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:151:40: Cell pin connected by name with empty reference: 'dbg_cc_dest'
+  151 |         .dbg_l_dest(), .dbg_c_dest(), .dbg_cc_dest(),
+      |                                        ^~~~~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:152:10: Cell pin connected by name with empty reference: 'dbg_l_rt'
+  152 |         .dbg_l_rt(), .dbg_c_rt(), .dbg_cc_rt(),
+      |          ^~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:152:23: Cell pin connected by name with empty reference: 'dbg_c_rt'
+  152 |         .dbg_l_rt(), .dbg_c_rt(), .dbg_cc_rt(),
+      |                       ^~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:152:36: Cell pin connected by name with empty reference: 'dbg_cc_rt'
+  152 |         .dbg_l_rt(), .dbg_c_rt(), .dbg_cc_rt(),
+      |                                    ^~~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:153:10: Cell pin connected by name with empty reference: 'dbg_l_cw'
+  153 |         .dbg_l_cw(), .dbg_l_ccw(), .dbg_c_cw(), .dbg_c_ccw(), .dbg_cc_cw(), .dbg_cc_ccw(),
+      |          ^~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:153:23: Cell pin connected by name with empty reference: 'dbg_l_ccw'
+  153 |         .dbg_l_cw(), .dbg_l_ccw(), .dbg_c_cw(), .dbg_c_ccw(), .dbg_cc_cw(), .dbg_cc_ccw(),
+      |                       ^~~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:153:37: Cell pin connected by name with empty reference: 'dbg_c_cw'
+  153 |         .dbg_l_cw(), .dbg_l_ccw(), .dbg_c_cw(), .dbg_c_ccw(), .dbg_cc_cw(), .dbg_cc_ccw(),
+      |                                     ^~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:153:50: Cell pin connected by name with empty reference: 'dbg_c_ccw'
+  153 |         .dbg_l_cw(), .dbg_l_ccw(), .dbg_c_cw(), .dbg_c_ccw(), .dbg_cc_cw(), .dbg_cc_ccw(),
+      |                                                  ^~~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:153:64: Cell pin connected by name with empty reference: 'dbg_cc_cw'
+  153 |         .dbg_l_cw(), .dbg_l_ccw(), .dbg_c_cw(), .dbg_c_ccw(), .dbg_cc_cw(), .dbg_cc_ccw(),
+      |                                                                ^~~~~~~~~
+%Warning-PINCONNECTEMPTY: tile.sv:153:78: Cell pin connected by name with empty reference: 'dbg_cc_ccw'
+  153 |         .dbg_l_cw(), .dbg_l_ccw(), .dbg_c_cw(), .dbg_c_ccw(), .dbg_cc_cw(), .dbg_cc_ccw(),
+      |                                                                              ^~~~~~~~~~
+%Warning-DECLFILENAME: Tile_2tb.sv:8:8: Filename 'Tile_2tb' does not match MODULE name: 'tile_tb_stable'
+    8 | module tile_tb_stable;
+      |        ^~~~~~~~~~~~~~
+%Warning-IMPORTSTAR: cache_interface.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: cache_controller.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: cache_storage.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: L2_cache_interface.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import l2_cache_pkg::*;
+      |                    ^~
+%Warning-IMPORTSTAR: L2_cache_interface.sv:2:20: Import::* in $unit scope may pollute global namespace
+    2 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: L2_cache_controller.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import l2_cache_pkg::*;
+      |                    ^~
+%Warning-IMPORTSTAR: L2_cache_controller.sv:2:20: Import::* in $unit scope may pollute global namespace
+    2 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: L2_cache_storage.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import l2_cache_pkg::*;
+      |                    ^~
+%Warning-IMPORTSTAR: NIC.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import l2_cache_pkg::*;
+      |                    ^~
+%Warning-IMPORTSTAR: NIC.sv:2:20: Import::* in $unit scope may pollute global namespace
+    2 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: Mux_interface.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: Mux.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: Mux.sv:2:20: Import::* in $unit scope may pollute global namespace
+    2 | import l2_cache_pkg::*;
+      |                    ^~
+%Warning-IMPORTSTAR: mem.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import l2_cache_pkg::*;
+      |                    ^~
+%Warning-IMPORTSTAR: mem.sv:2:20: Import::* in $unit scope may pollute global namespace
+    2 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: tile.sv:1:20: Import::* in $unit scope may pollute global namespace
+    1 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: tile.sv:2:20: Import::* in $unit scope may pollute global namespace
+    2 | import l2_cache_pkg::*;
+      |                    ^~
+%Warning-IMPORTSTAR: Tile_2tb.sv:3:20: Import::* in $unit scope may pollute global namespace
+    3 | import L1_cache_mem::*;
+      |                    ^~
+%Warning-IMPORTSTAR: Tile_2tb.sv:4:20: Import::* in $unit scope may pollute global namespace
+    4 | import l2_cache_pkg::*;
+      |                    ^~
+%Warning-VARHIDDEN: L2_cache_controller.sv:372:59: Declaration of signal hides declaration in upper scope: 'requester'
+  372 |                                     automatic logic [1:0] requester;
+      |                                                           ^~~~~~~~~
+                    L2_cache_controller.sv:316:51: ... Location of original declaration
+  316 |                             automatic logic [1:0] requester;
+      |                                                   ^~~~~~~~~
+%Warning-VARHIDDEN: NIC.sv:220:5: Declaration of enum value hides declaration in upper scope: IDLE
+  220 |     IDLE,
+      |     ^~~~
+                    L1_cache_mem.sv:15:5: ... Location of original declaration
+   15 |     IDLE,COMPARE,ALLOCATE,DONE,SNOOP,WRITEBACK
+      |     ^~~~
+%Warning-WIDTHEXPAND: L2_cache_controller.sv:565:54: Operator NEQ expects 32 bits on the RHS, but RHS's VARREF 'MY_BANK_ID' generates 2 bits.
+                                                   : ... note: In instance 'tile_tb_stable.dut1.u_c2_ctrl'
+  565 |                                 if (!has_remote && s != MY_BANK_ID && pending_send[s]) begin
+      |                                                      ^~
+%Warning-UNUSEDSIGNAL: Tile_2tb.sv:17:17: Signal is not used: 'l1_data_out0'
+                                        : ... note: In instance 'tile_tb_stable'
+   17 |     logic [7:0] l1_data_out0, l1_data_out1;
+      |                 ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: Tile_2tb.sv:17:31: Signal is not used: 'l1_data_out1'
+                                        : ... note: In instance 'tile_tb_stable'
+   17 |     logic [7:0] l1_data_out0, l1_data_out1;
+      |                               ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: cache_interface.sv:19:16: Bits of signal are not used: 'req_addr_in'[1:0]
+                                               : ... note: In instance 'tile_tb_stable.dut1.u_mux'
+   19 |     logic [7:0]req_addr_in;
+      |                ^~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: L2_cache_interface.sv:22:20: Signal is not used: 'resp_ready_i'
+                                                  : ... note: In instance 'tile_tb_stable.dut1.u_mux'
+   22 |     logic          resp_ready_i;
+      |                    ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: L2_cache_interface.sv:19:20: Bits of signal are not used: 'req_nic_pkt_i'[23:22,2:0]
+                                                  : ... note: In instance 'tile_tb_stable.dut1.u_mux'
+   19 |     l2_nic_pkt_t   req_nic_pkt_i;
+      |                    ^~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: cache_controller.sv:8:7: Signal is not used: 'snoop_done'
+                                              : ... note: In instance 'tile_tb_stable.dut1.u_c1_ctrl'
+    8 | logic snoop_done = 1'b0;
+      |       ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: cache_controller.sv:9:7: Signal is not used: 'stall'
+                                              : ... note: In instance 'tile_tb_stable.dut1.u_c1_ctrl'
+    9 | logic stall = 1'b0;
+      |       ^~~~~
+%Warning-UNUSEDSIGNAL: cache_controller.sv:411:38: Bits of signal are not used: 'sdec'[7:4]
+                                                 : ... note: In instance 'tile_tb_stable.dut1.u_c1_ctrl'
+  411 |              automatic l1_decision_t sdec;
+      |                                      ^~~~
+%Warning-UNUSEDSIGNAL: L2_cache_controller.sv:13:11: Signal is not used: 'done'
+                                                   : ... note: In instance 'tile_tb_stable.dut1.u_c2_ctrl'
+   13 |     logic done         = 1'b0;
+      |           ^~~~
+%Warning-UNUSEDSIGNAL: L2_cache_controller.sv:162:45: Bits of signal are not used: 'd'[8:0]
+                                                    : ... note: In instance 'tile_tb_stable.dut1.u_c2_ctrl'
+  162 |                     automatic l2_decision_t d;
+      |                                             ^
+%Warning-UNUSEDSIGNAL: L2_cache_interface.sv:18:20: Signal is not used: 'req_ready_o'
+                                                  : ... note: In instance 'tile_tb_stable.dut1.u_mux'
+   18 |     logic          req_ready_o;
+      |                    ^~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: L2_cache_controller.sv:317:53: Bits of signal are not used: 'dec'[5:0]
+                                                    : ... note: In instance 'tile_tb_stable.dut1.u_c2_ctrl'
+  317 |                             automatic l2_decision_t dec;
+      |                                                     ^~~
+%Warning-UNUSEDSIGNAL: L2_cache_controller.sv:401:54: Bits of signal are not used: 'edec'[8:6]
+                                                    : ... note: In instance 'tile_tb_stable.dut1.u_c2_ctrl'
+  401 |                             automatic l2_decision_t  edec;
+      |                                                      ^~~~
+%Warning-UNUSEDSIGNAL: NIC.sv:16:26: Signal is not used: 'l2_req_ready'
+                                   : ... note: In instance 'tile_tb_stable.dut1.u_nic'
+   16 |     input  logic         l2_req_ready,
+      |                          ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: NIC.sv:28:13: Signal is not used: 'fifo_count'
+                                   : ... note: In instance 'tile_tb_stable.dut1.u_nic'
+   28 | logic [3:0] fifo_count;
+      |             ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: NIC.sv:102:58: Bits of signal are not used: 'f'[5:0]
+                                    : ... note: In instance 'tile_tb_stable.dut1.u_nic'
+  102 | function automatic l2_nic_pkt_t unpack_flit(logic [31:0] f);
+      |                                                          ^
+%Warning-UNUSEDSIGNAL: Router.sv:184:7: Signal is not used: 'l_full'
+                                      : ... note: In instance 'tile_tb_stable.dut1.u_router'
+  184 | logic l_full, l_empty;
+      |       ^~~~~~
+%Warning-UNUSEDSIGNAL: Router.sv:185:7: Signal is not used: 'c_full'
+                                      : ... note: In instance 'tile_tb_stable.dut1.u_router'
+  185 | logic c_full, c_empty;
+      |       ^~~~~~
+%Warning-UNUSEDSIGNAL: Router.sv:186:7: Signal is not used: 'cc_full'
+                                      : ... note: In instance 'tile_tb_stable.dut1.u_router'
+  186 | logic cc_full, cc_empty;
+      |       ^~~~~~~
+%Warning-UNUSEDSIGNAL: Mux.sv:29:27: Bits of signal are not used: 'nic_in_pkt'[23,5:0]
+                                   : ... note: In instance 'tile_tb_stable.dut1.u_mux'
+   29 |     input  l2_nic_pkt_t   nic_in_pkt,
+      |                           ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: cache_interface.sv:8:16: Signal is not driven, nor used: 'tag'
+                                              : ... note: In instance 'tile_tb_stable.dut1.u_mux'
+    8 |     logic [3:0]tag;
+      |                ^~~
+%Warning-UNUSEDSIGNAL: NIC.sv:305:17: Signal is not used: 'clk'
+                                    : ... note: In instance 'tile_tb_stable.dut1.u_nic.decoder'
+  305 |     input logic clk,
+      |                 ^~~
+%Warning-UNUSEDSIGNAL: NIC.sv:306:17: Signal is not used: 'rst'
+                                    : ... note: In instance 'tile_tb_stable.dut1.u_nic.decoder'
+  306 |     input logic rst,
+      |                 ^~~
+%Warning-UNUSEDSIGNAL: NIC.sv:307:24: Bits of signal are not used: 'packet'[5:0]
+                                    : ... note: In instance 'tile_tb_stable.dut1.u_nic.decoder'
+  307 |     input logic [31:0] packet,
+      |                        ^~~~~~
+%Warning-UNUSEDSIGNAL: Router.sv:45:20: Bits of signal are not used: 'flit'[29:0]
+                                      : ... note: In instance 'tile_tb_stable.dut1.u_router.d2'
+   45 | input logic [31:0] flit,
+      |                    ^~~~
+%Warning-CASEINCOMPLETE: cache_controller.sv:189:3: Case values incompletely covered (example pattern 0x6)
+  189 |   case(C_PS)
+      |   ^~~~
+%Warning-CASEINCOMPLETE: cache_controller.sv:485:9: Case values incompletely covered (example pattern 0x0)
+  485 |         case(cur_state)
+      |         ^~~~
+%Warning-CASEINCOMPLETE: L2_cache_controller.sv:275:9: Case values incompletely covered (example pattern 0x5)
+  275 |         case (C_PS)
+      |         ^~~~
+%Warning-BLKSEQ: Tile_2tb.sv:39:20: Blocking assignment '=' in sequential logic process
+                                  : ... Suggest using delayed assignment '<='
+   39 |     always #10 clk = ~clk;
+      |                    ^
+%Warning-INITIALDLY: Tile_2tb.sv:100:22: Non-blocking assignment '<=' in initial/final block
+                                       : ... This will be executed as a blocking assignment '='!
+  100 |             l1_inst0 <= {2'b01, addr};
+      |                      ^~
+%Warning-INITIALDLY: Tile_2tb.sv:102:22: Non-blocking assignment '<=' in initial/final block
+                                       : ... This will be executed as a blocking assignment '='!
+  102 |             l1_inst0 <= 10'b0;
+      |                      ^~
+%Warning-INITIALDLY: Tile_2tb.sv:110:22: Non-blocking assignment '<=' in initial/final block
+                                       : ... This will be executed as a blocking assignment '='!
+  110 |             l1_inst1 <= {2'b01, addr};
+      |                      ^~
+%Warning-INITIALDLY: Tile_2tb.sv:112:22: Non-blocking assignment '<=' in initial/final block
+                                       : ... This will be executed as a blocking assignment '='!
+  112 |             l1_inst1 <= 10'b0;
+      |                      ^~
+%Warning-INITIALDLY: Tile_2tb.sv:120:25: Non-blocking assignment '<=' in initial/final block
+                                       : ... This will be executed as a blocking assignment '='!
+  120 |             l1_in_data0 <= data;
+      |                         ^~
+%Warning-INITIALDLY: Tile_2tb.sv:121:22: Non-blocking assignment '<=' in initial/final block
+                                       : ... This will be executed as a blocking assignment '='!
+  121 |             l1_inst0 <= {2'b10, addr};
+      |                      ^~
+%Warning-INITIALDLY: Tile_2tb.sv:123:22: Non-blocking assignment '<=' in initial/final block
+                                       : ... This will be executed as a blocking assignment '='!
+  123 |             l1_inst0 <= 10'b0;
+      |                      ^~
+%Warning-COMBDLY: cache_controller.sv:175:21: Non-blocking assignment '<=' in combinational logic process
+                                            : ... This will be executed as a blocking assignment '='!
+  175 |                C_NS <= IDLE;
+      |                     ^~
+                  *** See https://verilator.org/warn/COMBDLY before disabling this,
+                  else you may end up with different sim results.
+%Warning-COMBDLY: cache_controller.sv:163:25: Non-blocking assignment '<=' in combinational logic process
+                                            : ... This will be executed as a blocking assignment '='!
+  163 |                    C_NS <= IDLE;
+      |                         ^~
+%Warning-COMBDLY: cache_controller.sv:149:22: Non-blocking assignment '<=' in combinational logic process
+                                            : ... This will be executed as a blocking assignment '='!
+  149 |                 C_NS <= IDLE;
+      |                      ^~
+%Warning-COMBDLY: cache_controller.sv:153:22: Non-blocking assignment '<=' in combinational logic process
+                                            : ... This will be executed as a blocking assignment '='!
+  153 |                 C_NS <= ALLOCATE;
+      |                      ^~
+%Warning-COMBDLY: cache_controller.sv:157:22: Non-blocking assignment '<=' in combinational logic process
+                                            : ... This will be executed as a blocking assignment '='!
+  157 |                 C_NS <= DONE;
+      |                      ^~
+%Warning-COMBDLY: cache_controller.sv:132:20: Non-blocking assignment '<=' in combinational logic process
+                                            : ... This will be executed as a blocking assignment '='!
+  132 |               C_NS <= IDLE;
+      |                    ^~
+%Warning-LATCH: cache_controller.sv:71:1: Latch inferred for signal 'tile_tb_stable.dut0.u_c1_ctrl.C_NS' (not all control paths of combinational always assign a value)
+                                        : ... Suggest use of always_latch for intentional latches
+   71 | always_comb
+      | ^~~~~~~~~~~
+%Warning-COMBDLY: cache_controller.sv:181:18: Non-blocking assignment '<=' in combinational logic process
+                                            : ... This will be executed as a blocking assignment '='!
+  181 |    cache_mem_out <= c1_inf.cache_mem_out;
+      |                  ^~
+%Warning-BLKSEQ: cache_controller.sv:481:13: Blocking assignment '=' in sequential logic process
+                                           : ... Suggest using delayed assignment '<='
+  481 |     is_load = (inst == 2'b01);
+      |             ^
+%Warning-BLKSEQ: cache_controller.sv:482:11: Blocking assignment '=' in sequential logic process
+                                           : ... Suggest using delayed assignment '<='
+  482 |     flush = (inst == 2'b11);
+      |           ^
+%Warning-BLKSEQ: cache_controller.sv:207:25: Blocking assignment '=' in sequential logic process
+                                           : ... Suggest using delayed assignment '<='
+  207 |                     dec = l1_decide(cache_mem_out[req_set][req_hit_way].C_tag, 1'b1, c1_inf.inst[9:8]);
+      |                         ^
+%Warning-BLKSEQ: cache_controller.sv:279:33: Blocking assignment '=' in sequential logic process
+                                           : ... Suggest using delayed assignment '<='
+  279 |                             dec = l1_decide(INVALID, 1'b0, c1_inf.inst[9:8]);
+      |                                 ^
+%Warning-BLKSEQ: cache_controller.sv:261:29: Blocking assignment '=' in sequential logic process
+                                           : ... Suggest using delayed assignment '<='
+  261 |                         dec = l1_decide(INVALID, 1'b0, c1_inf.inst[9:8]);
+      |                             ^
+%Warning-BLKSEQ: cache_controller.sv:250:29: Blocking assignment '=' in sequential logic process
+                                           : ... Suggest using delayed assignment '<='
+  250 |                         dec = l1_decide(INVALID, 1'b0, c1_inf.inst[9:8]);
+      |                             ^
+%Warning-BLKSEQ: cache_controller.sv:303:25: Blocking assignment '=' in sequential logic process
+                                           : ... Suggest using delayed assignment '<='
+  303 |                     dec = l1_decide(cache_mem_out[req_set][req_hit_way].C_tag, 1'b1, c1_inf.inst[9:8]);
+      |                         ^
+%Warning-LATCH: cache_controller.sv:454:1: Latch inferred for signal 'lru_id' (not all control paths of combinational always assign a value)
+                                         : ... Suggest use of always_latch for intentional latches
+  454 | always_comb
+      | ^~~~~~~~~~~
+%Warning-LATCH: cache_controller.sv:454:1: Latch inferred for signal 'update_lru' (not all control paths of combinational always assign a value)
+                                         : ... Suggest use of always_latch for intentional latches
+  454 | always_comb
+      | ^~~~~~~~~~~
+%Warning-LATCH: L2_cache_controller.sv:154:5: Latch inferred for signal 'tile_tb_stable.dut0.u_c2_ctrl.unnamedblk2.hw' (not all control paths of combinational always assign a value)
+                                            : ... Suggest use of always_latch for intentional latches
+  154 |     always_comb begin
+      |     ^~~~~~~~~~~
+%Warning-LATCH: L2_cache_controller.sv:154:5: Latch inferred for signal 'tile_tb_stable.dut0.u_c2_ctrl.unnamedblk2.rq' (not all control paths of combinational always assign a value)
+                                            : ... Suggest use of always_latch for intentional latches
+  154 |     always_comb begin
+      |     ^~~~~~~~~~~
+%Warning-LATCH: L2_cache_controller.sv:154:5: Latch inferred for signal 'tile_tb_stable.dut0.u_c2_ctrl.unnamedblk2.d' (not all control paths of combinational always assign a value)
+                                            : ... Suggest use of always_latch for intentional latches
+  154 |     always_comb begin
+      |     ^~~~~~~~~~~
+%Warning-LATCH: cache_controller.sv:71:1: Latch inferred for signal 'tile_tb_stable.dut1.u_c1_ctrl.C_NS' (not all control paths of combinational always assign a value)
+                                        : ... Suggest use of always_latch for intentional latches
+   71 | always_comb
+      | ^~~~~~~~~~~
+%Warning-LATCH: L2_cache_controller.sv:154:5: Latch inferred for signal 'tile_tb_stable.dut1.u_c2_ctrl.unnamedblk2.hw' (not all control paths of combinational always assign a value)
+                                            : ... Suggest use of always_latch for intentional latches
+  154 |     always_comb begin
+      |     ^~~~~~~~~~~
+%Warning-LATCH: L2_cache_controller.sv:154:5: Latch inferred for signal 'tile_tb_stable.dut1.u_c2_ctrl.unnamedblk2.rq' (not all control paths of combinational always assign a value)
+                                            : ... Suggest use of always_latch for intentional latches
+  154 |     always_comb begin
+      |     ^~~~~~~~~~~
+%Warning-LATCH: L2_cache_controller.sv:154:5: Latch inferred for signal 'tile_tb_stable.dut1.u_c2_ctrl.unnamedblk2.d' (not all control paths of combinational always assign a value)
+                                            : ... Suggest use of always_latch for intentional latches
+  154 |     always_comb begin
+      |     ^~~~~~~~~~~
+%Warning-SYNCASYNCNET: Tile_2tb.sv:15:16: Signal flopped as both synchronous and async: 'tile_tb_stable.rst'
+                       tile.sv:76:13: ... Location of async usage
+   76 |         if (rst) begin
+      |             ^~~
+                       Router.sv:17:5: ... Location of sync usage
+   17 | if (rst) begin
+      |     ^~~
+%Warning-MULTIDRIVEN: cache_controller.sv:7:7: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c1_ctrl.done'
+                      cache_controller.sv:191:13: ... Location of first driving block
+  191 |             done <= 1'b0;
+      |             ^~~~
+                      cache_controller.sv:56:7: ... Location of other driving block
+   56 |       done          <= 1'b0;
+      |       ^~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:11:7: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c1_ctrl.hit'
+                      cache_controller.sv:194:16: ... Location of first driving block
+  194 |                hit        <= 1'b0;
+      |                ^~~
+                      cache_controller.sv:52:7: ... Location of other driving block
+   52 |       hit           <= 1'b0;
+      |       ^~~
+%Warning-MULTIDRIVEN: cache_controller.sv:11:19: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c1_ctrl.miss'
+                      cache_controller.sv:195:16: ... Location of first driving block
+  195 |                miss       <= 1'b0;
+      |                ^~~~
+                      cache_controller.sv:53:7: ... Location of other driving block
+   53 |       miss          <= 1'b0;
+      |       ^~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:10:7: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c1_ctrl.write_back'
+                      cache_controller.sv:197:16: ... Location of first driving block
+  197 |                write_back <= 1'b0;
+      |                ^~~~~~~~~~
+                      cache_controller.sv:55:7: ... Location of other driving block
+   55 |       write_back    <= 1'b0;
+      |       ^~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:15:13: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c1_ctrl.pending_set'
+                      cache_controller.sv:236:29: ... Location of first driving block
+  236 |                             pending_set          <= req_set;
+      |                             ^~~~~~~~~~~
+                      cache_controller.sv:59:7: ... Location of other driving block
+   59 |       pending_set   <= '0;
+      |       ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:16:13: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c1_ctrl.pending_way'
+                      cache_controller.sv:237:29: ... Location of first driving block
+  237 |                             pending_way          <= req_hit_way;
+      |                             ^~~~~~~~~~~
+                      cache_controller.sv:60:7: ... Location of other driving block
+   60 |       pending_way   <= 1'b0;
+      |       ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:12:7: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c1_ctrl.fill_pending'
+                      cache_controller.sv:239:29: ... Location of first driving block
+  239 |                             fill_pending         <= 1'b1;
+      |                             ^~~~~~~~~~~~
+                      cache_controller.sv:57:7: ... Location of other driving block
+   57 |       fill_pending  <= 1'b0;
+      |       ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:14:15: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c1_ctrl.pending_state'
+                      cache_controller.sv:235:29: ... Location of first driving block
+  235 |                             pending_state        <= dec.next_state;  
+      |                             ^~~~~~~~~~~~~
+                      cache_controller.sv:58:7: ... Location of other driving block
+   58 |       pending_state <= INVALID;
+      |       ^~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:18:13: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c1_ctrl.pending_addr'
+                      cache_controller.sv:283:29: ... Location of first driving block
+  283 |                             pending_addr <= c1_inf.inst[7:0];
+      |                             ^~~~~~~~~~~~
+                      cache_controller.sv:62:7: ... Location of other driving block
+   62 |       pending_addr  <= '0;
+      |       ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:17:13: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c1_ctrl.pending_op'
+                      cache_controller.sv:293:29: ... Location of first driving block
+  293 |                             pending_op    <= c1_inf.inst[9:8];
+      |                             ^~~~~~~~~~
+                      cache_controller.sv:61:7: ... Location of other driving block
+   61 |       pending_op    <= '0;
+      |       ^~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:26:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.req_addr'
+                      L2_cache_controller.sv:281:25: ... Location of first driving block
+  281 |                         req_addr     <= c2_inf.req_addr_out;
+      |                         ^~~~~~~~
+                      L2_cache_controller.sv:140:17: ... Location of other driving block
+  140 |                 req_addr      <= '0;
+      |                 ^~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:27:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.req_data'
+                      L2_cache_controller.sv:282:25: ... Location of first driving block
+  282 |                         req_data     <= c2_inf.req_data_out;
+      |                         ^~~~~~~~
+                      L2_cache_controller.sv:141:17: ... Location of other driving block
+  141 |                 req_data      <= '0;
+      |                 ^~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:24:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.req_from_nic'
+                      L2_cache_controller.sv:280:25: ... Location of first driving block
+  280 |                         req_from_nic <= 1'b0;
+      |                         ^~~~~~~~~~~~
+                      L2_cache_controller.sv:138:17: ... Location of other driving block
+  138 |                 req_from_nic  <= 1'b0;
+      |                 ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:25:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.req_src'
+                      L2_cache_controller.sv:290:25: ... Location of first driving block
+  290 |                         req_src            <= c2_inf.req_nic_pkt_i.src_id[1:0];
+      |                         ^~~~~~~
+                      L2_cache_controller.sv:139:17: ... Location of other driving block
+  139 |                 req_src       <= '0;
+      |                 ^~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:30:18: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.snoop_sent'
+                      L2_cache_controller.sv:294:25: ... Location of first driving block
+  294 |                         snoop_sent         <= 1'b0;
+      |                         ^~~~~~~~~~
+                      L2_cache_controller.sv:142:17: ... Location of other driving block
+  142 |                 snoop_sent    <= 1'b0;
+      |                 ^~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:14:11: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.fill_pending'
+                      L2_cache_controller.sv:310:21: ... Location of first driving block
+  310 |                     fill_pending <= 1'b0;
+      |                     ^~~~~~~~~~~~
+                      L2_cache_controller.sv:131:17: ... Location of other driving block
+  131 |                 fill_pending  <= 1'b0;
+      |                 ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:17:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.pending_set'
+                      L2_cache_controller.sv:324:29: ... Location of first driving block
+  324 |                             pending_set <= req_set;
+      |                             ^~~~~~~~~~~
+                      L2_cache_controller.sv:133:17: ... Location of other driving block
+  133 |                 pending_set   <= '0;
+      |                 ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:17:30: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.pending_way'
+                      L2_cache_controller.sv:325:29: ... Location of first driving block
+  325 |                             pending_way <= hit_way;
+      |                             ^~~~~~~~~~~
+                      L2_cache_controller.sv:134:17: ... Location of other driving block
+  134 |                 pending_way   <= '0;
+      |                 ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:19:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.pending_send'
+                      L2_cache_controller.sv:357:37: ... Location of first driving block
+  357 |                                     pending_send <= targets;
+      |                                     ^~~~~~~~~~~~
+                      L2_cache_controller.sv:136:17: ... Location of other driving block
+  136 |                 pending_send  <= '0;
+      |                 ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:16:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.pending_state'
+                      L2_cache_controller.sv:366:37: ... Location of first driving block
+  366 |                                     pending_state <= DIR_INV_WAIT;
+      |                                     ^~~~~~~~~~~~~
+                      L2_cache_controller.sv:132:17: ... Location of other driving block
+  132 |                 pending_state <= DIR_I;
+      |                 ^~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:20:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.pending_ack'
+                      L2_cache_controller.sv:358:37: ... Location of first driving block
+  358 |                                     pending_ack  <= targets;
+      |                                     ^~~~~~~~~~~
+                      L2_cache_controller.sv:137:17: ... Location of other driving block
+  137 |                 pending_ack   <= '0;
+      |                 ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:18:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.pending_owner'
+                      L2_cache_controller.sv:375:37: ... Location of first driving block
+  375 |                                     pending_owner <= owner;
+      |                                     ^~~~~~~~~~~~~
+                      L2_cache_controller.sv:135:17: ... Location of other driving block
+  135 |                 pending_owner <= '0;
+      |                 ^~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:58:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.fifo_ptr'
+                      L2_cache_controller.sv:408:29: ... Location of first driving block
+  408 |                             fifo_ptr[req_set] <= fifo_ptr[req_set] + 2'd1;
+      |                             ^~~~~~~~
+                      L2_cache_controller.sv:146:45: ... Location of other driving block
+  146 |                 for (int s = 0; s < 4; s++) fifo_ptr[s] <= 2'd0;
+      |                                             ^~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:33:18: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.mem_req_sent'
+                      L2_cache_controller.sv:653:29: ... Location of first driving block
+  653 |                             mem_req_sent  <= 1'b0;
+      |                             ^~~~~~~~~~~~
+                      L2_cache_controller.sv:143:17: ... Location of other driving block
+  143 |                 mem_req_sent  <= 1'b0;
+      |                 ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:34:18: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.evict_wb_data'
+                      L2_cache_controller.sv:630:29: ... Location of first driving block
+  630 |                             evict_wb_data <= put_data;
+      |                             ^~~~~~~~~~~~~
+                      L2_cache_controller.sv:144:17: ... Location of other driving block
+  144 |                 evict_wb_data <= '0;
+      |                 ^~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:35:18: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut0.u_c2_ctrl.evict_wb_we'
+                      L2_cache_controller.sv:631:29: ... Location of first driving block
+  631 |                             evict_wb_we   <= (put_msg == MSG_PUTM);
+      |                             ^~~~~~~~~~~
+                      L2_cache_controller.sv:145:17: ... Location of other driving block
+  145 |                 evict_wb_we   <= 1'b0;
+      |                 ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:7:7: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c1_ctrl.done'
+                      cache_controller.sv:191:13: ... Location of first driving block
+  191 |             done <= 1'b0;
+      |             ^~~~
+                      cache_controller.sv:56:7: ... Location of other driving block
+   56 |       done          <= 1'b0;
+      |       ^~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:11:7: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c1_ctrl.hit'
+                      cache_controller.sv:194:16: ... Location of first driving block
+  194 |                hit        <= 1'b0;
+      |                ^~~
+                      cache_controller.sv:52:7: ... Location of other driving block
+   52 |       hit           <= 1'b0;
+      |       ^~~
+%Warning-MULTIDRIVEN: cache_controller.sv:11:19: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c1_ctrl.miss'
+                      cache_controller.sv:195:16: ... Location of first driving block
+  195 |                miss       <= 1'b0;
+      |                ^~~~
+                      cache_controller.sv:53:7: ... Location of other driving block
+   53 |       miss          <= 1'b0;
+      |       ^~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:10:7: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c1_ctrl.write_back'
+                      cache_controller.sv:197:16: ... Location of first driving block
+  197 |                write_back <= 1'b0;
+      |                ^~~~~~~~~~
+                      cache_controller.sv:55:7: ... Location of other driving block
+   55 |       write_back    <= 1'b0;
+      |       ^~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:15:13: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c1_ctrl.pending_set'
+                      cache_controller.sv:236:29: ... Location of first driving block
+  236 |                             pending_set          <= req_set;
+      |                             ^~~~~~~~~~~
+                      cache_controller.sv:59:7: ... Location of other driving block
+   59 |       pending_set   <= '0;
+      |       ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:16:13: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c1_ctrl.pending_way'
+                      cache_controller.sv:237:29: ... Location of first driving block
+  237 |                             pending_way          <= req_hit_way;
+      |                             ^~~~~~~~~~~
+                      cache_controller.sv:60:7: ... Location of other driving block
+   60 |       pending_way   <= 1'b0;
+      |       ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:12:7: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c1_ctrl.fill_pending'
+                      cache_controller.sv:239:29: ... Location of first driving block
+  239 |                             fill_pending         <= 1'b1;
+      |                             ^~~~~~~~~~~~
+                      cache_controller.sv:57:7: ... Location of other driving block
+   57 |       fill_pending  <= 1'b0;
+      |       ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:14:15: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c1_ctrl.pending_state'
+                      cache_controller.sv:235:29: ... Location of first driving block
+  235 |                             pending_state        <= dec.next_state;  
+      |                             ^~~~~~~~~~~~~
+                      cache_controller.sv:58:7: ... Location of other driving block
+   58 |       pending_state <= INVALID;
+      |       ^~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:18:13: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c1_ctrl.pending_addr'
+                      cache_controller.sv:283:29: ... Location of first driving block
+  283 |                             pending_addr <= c1_inf.inst[7:0];
+      |                             ^~~~~~~~~~~~
+                      cache_controller.sv:62:7: ... Location of other driving block
+   62 |       pending_addr  <= '0;
+      |       ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: cache_controller.sv:17:13: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c1_ctrl.pending_op'
+                      cache_controller.sv:293:29: ... Location of first driving block
+  293 |                             pending_op    <= c1_inf.inst[9:8];
+      |                             ^~~~~~~~~~
+                      cache_controller.sv:61:7: ... Location of other driving block
+   61 |       pending_op    <= '0;
+      |       ^~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:26:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.req_addr'
+                      L2_cache_controller.sv:281:25: ... Location of first driving block
+  281 |                         req_addr     <= c2_inf.req_addr_out;
+      |                         ^~~~~~~~
+                      L2_cache_controller.sv:140:17: ... Location of other driving block
+  140 |                 req_addr      <= '0;
+      |                 ^~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:27:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.req_data'
+                      L2_cache_controller.sv:282:25: ... Location of first driving block
+  282 |                         req_data     <= c2_inf.req_data_out;
+      |                         ^~~~~~~~
+                      L2_cache_controller.sv:141:17: ... Location of other driving block
+  141 |                 req_data      <= '0;
+      |                 ^~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:24:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.req_from_nic'
+                      L2_cache_controller.sv:280:25: ... Location of first driving block
+  280 |                         req_from_nic <= 1'b0;
+      |                         ^~~~~~~~~~~~
+                      L2_cache_controller.sv:138:17: ... Location of other driving block
+  138 |                 req_from_nic  <= 1'b0;
+      |                 ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:25:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.req_src'
+                      L2_cache_controller.sv:290:25: ... Location of first driving block
+  290 |                         req_src            <= c2_inf.req_nic_pkt_i.src_id[1:0];
+      |                         ^~~~~~~
+                      L2_cache_controller.sv:139:17: ... Location of other driving block
+  139 |                 req_src       <= '0;
+      |                 ^~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:30:18: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.snoop_sent'
+                      L2_cache_controller.sv:294:25: ... Location of first driving block
+  294 |                         snoop_sent         <= 1'b0;
+      |                         ^~~~~~~~~~
+                      L2_cache_controller.sv:142:17: ... Location of other driving block
+  142 |                 snoop_sent    <= 1'b0;
+      |                 ^~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:14:11: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.fill_pending'
+                      L2_cache_controller.sv:310:21: ... Location of first driving block
+  310 |                     fill_pending <= 1'b0;
+      |                     ^~~~~~~~~~~~
+                      L2_cache_controller.sv:131:17: ... Location of other driving block
+  131 |                 fill_pending  <= 1'b0;
+      |                 ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:17:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.pending_set'
+                      L2_cache_controller.sv:324:29: ... Location of first driving block
+  324 |                             pending_set <= req_set;
+      |                             ^~~~~~~~~~~
+                      L2_cache_controller.sv:133:17: ... Location of other driving block
+  133 |                 pending_set   <= '0;
+      |                 ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:17:30: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.pending_way'
+                      L2_cache_controller.sv:325:29: ... Location of first driving block
+  325 |                             pending_way <= hit_way;
+      |                             ^~~~~~~~~~~
+                      L2_cache_controller.sv:134:17: ... Location of other driving block
+  134 |                 pending_way   <= '0;
+      |                 ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:19:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.pending_send'
+                      L2_cache_controller.sv:357:37: ... Location of first driving block
+  357 |                                     pending_send <= targets;
+      |                                     ^~~~~~~~~~~~
+                      L2_cache_controller.sv:136:17: ... Location of other driving block
+  136 |                 pending_send  <= '0;
+      |                 ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:16:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.pending_state'
+                      L2_cache_controller.sv:366:37: ... Location of first driving block
+  366 |                                     pending_state <= DIR_INV_WAIT;
+      |                                     ^~~~~~~~~~~~~
+                      L2_cache_controller.sv:132:17: ... Location of other driving block
+  132 |                 pending_state <= DIR_I;
+      |                 ^~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:20:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.pending_ack'
+                      L2_cache_controller.sv:358:37: ... Location of first driving block
+  358 |                                     pending_ack  <= targets;
+      |                                     ^~~~~~~~~~~
+                      L2_cache_controller.sv:137:17: ... Location of other driving block
+  137 |                 pending_ack   <= '0;
+      |                 ^~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:18:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.pending_owner'
+                      L2_cache_controller.sv:375:37: ... Location of first driving block
+  375 |                                     pending_owner <= owner;
+      |                                     ^~~~~~~~~~~~~
+                      L2_cache_controller.sv:135:17: ... Location of other driving block
+  135 |                 pending_owner <= '0;
+      |                 ^~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:58:17: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.fifo_ptr'
+                      L2_cache_controller.sv:408:29: ... Location of first driving block
+  408 |                             fifo_ptr[req_set] <= fifo_ptr[req_set] + 2'd1;
+      |                             ^~~~~~~~
+                      L2_cache_controller.sv:146:45: ... Location of other driving block
+  146 |                 for (int s = 0; s < 4; s++) fifo_ptr[s] <= 2'd0;
+      |                                             ^~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:33:18: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.mem_req_sent'
+                      L2_cache_controller.sv:653:29: ... Location of first driving block
+  653 |                             mem_req_sent  <= 1'b0;
+      |                             ^~~~~~~~~~~~
+                      L2_cache_controller.sv:143:17: ... Location of other driving block
+  143 |                 mem_req_sent  <= 1'b0;
+      |                 ^~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:34:18: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.evict_wb_data'
+                      L2_cache_controller.sv:630:29: ... Location of first driving block
+  630 |                             evict_wb_data <= put_data;
+      |                             ^~~~~~~~~~~~~
+                      L2_cache_controller.sv:144:17: ... Location of other driving block
+  144 |                 evict_wb_data <= '0;
+      |                 ^~~~~~~~~~~~~
+%Warning-MULTIDRIVEN: L2_cache_controller.sv:35:18: Signal has multiple driving blocks with different clocking: 'tile_tb_stable.dut1.u_c2_ctrl.evict_wb_we'
+                      L2_cache_controller.sv:631:29: ... Location of first driving block
+  631 |                             evict_wb_we   <= (put_msg == MSG_PUTM);
+      |                             ^~~~~~~~~~~
+                      L2_cache_controller.sv:145:17: ... Location of other driving block
+  145 |                 evict_wb_we   <= 1'b0;
+      |                 ^~~~~~~~~~~

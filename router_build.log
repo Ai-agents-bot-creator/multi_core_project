@@ -1,0 +1,22 @@
+%Warning-CASEINCOMPLETE: Router.sv:407:5: Case values incompletely covered (example pattern 0x3)
+  407 |     case (dbg_l_rt)
+      |     ^~~~
+                         ... For warning description see https://verilator.org/warn/CASEINCOMPLETE?v=5.020
+                         ... Use "/* verilator lint_off CASEINCOMPLETE */" and lint_on around source to disable this message.
+%Warning-CASEINCOMPLETE: Router.sv:420:2: Case values incompletely covered (example pattern 0x3)
+  420 |  case (dbg_c_rt)
+      |  ^~~~
+%Warning-CASEINCOMPLETE: Router.sv:433:2: Case values incompletely covered (example pattern 0x3)
+  433 |  case (dbg_cc_rt)
+      |  ^~~~
+make: Entering directory '/home/ubuntu/Design-of-Multi-core-cache-based-on-Tiled-multi-core-architecture/build/router_obj'
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_timing.o /usr/share/verilator/include/verilated_timing.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o verilated_threads.o /usr/share/verilator/include/verilated_threads.cpp
+/usr/bin/python3 /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vtb_router.cpp Vtb_router___024root__DepSet_hf0bbce47__0.cpp Vtb_router___024root__DepSet_hf1c1d412__0.cpp Vtb_router__main.cpp Vtb_router__ConstPool_0.cpp Vtb_router___024root__Slow.cpp Vtb_router___024root__DepSet_hf0bbce47__0__Slow.cpp Vtb_router___024root__DepSet_hf1c1d412__0__Slow.cpp Vtb_router__Syms.cpp > Vtb_router__ALL.cpp
+g++ -Os  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-overloaded-virtual -Wno-shadow -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable     -DVL_TIME_CONTEXT   -fcoroutines -c -o Vtb_router__ALL.o Vtb_router__ALL.cpp
+echo "" > Vtb_router__ALL.verilator_deplist.tmp
+Archive ar -rcs Vtb_router__ALL.a Vtb_router__ALL.o
+g++     verilated.o verilated_timing.o verilated_threads.o Vtb_router__ALL.a    -pthread -lpthread -latomic   -o router_tb
+rm Vtb_router__ALL.verilator_deplist.tmp
+make: Leaving directory '/home/ubuntu/Design-of-Multi-core-cache-based-on-Tiled-multi-core-architecture/build/router_obj'

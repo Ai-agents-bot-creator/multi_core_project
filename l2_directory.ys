@@ -1,0 +1,3 @@
+read_verilog -formal -sv formal/l2_directory_formal.sv
+prep -top l2_directory_formal
+write_smt2 -wires build/formal/l2_directory.smt2

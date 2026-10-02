@@ -1,0 +1,373 @@
+T=0 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=10 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+======== CACHE DUMP [INITIAL] @ T=30 ========
+  T0 L1:
+    set=0 way=0 valid=0 tag=0 state=INVALID
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T1 L1:
+    set=0 way=0 valid=0 tag=0 state=INVALID
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T0 L2 (ALL 4 sets):
+    set=0 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+  T1 L2 (ALL 4 sets):
+    set=0 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+
+>>>>>>>> TEST 1: T0 LOAD 0x01 -- read miss, fetch from memory, EXCLUSIVE <<<<<<<<
+
+T=30 | T0: L1(COMPARE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=50 | T0: L1(COMPARE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=70 | T0: L1(ALLOCATE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=90 | T0: L1(ALLOCATE) L2(L2_COMPARE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=110 | T0: L1(ALLOCATE) L2(L2_COMPARE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=130 | T0: L1(ALLOCATE) L2(L2_ALLOCATE/DIR_MEM_WAIT) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=150 | T0: L1(ALLOCATE) L2(L2_ALLOCATE/DIR_MEM_WAIT) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=170 | T0: L1(ALLOCATE) L2(L2_ALLOCATE/DIR_MEM_WAIT) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=190 | T0: L1(ALLOCATE) L2(L2_DONE/DIR_MEM_WAIT) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=210 | T0: L1(ALLOCATE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=230 | T0: L1(DONE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=250 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+======== CACHE DUMP [AFTER TEST 1] @ T=260 ========
+  T0 L1:
+    set=0 way=0 valid=1 tag=0 state=EXCLUSIVE
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T1 L1:
+    set=0 way=0 valid=0 tag=0 state=INVALID
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T0 L2 (ALL 4 sets):
+    set=0 way=0 valid=1 tag=1 state=DIR_E owner=0 sharers=01
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+  T1 L2 (ALL 4 sets):
+    set=0 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+
+>>>>>>>> TEST 2: T1 LOAD 0x15 -- independent read miss, own bank <<<<<<<<
+
+T=270 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(COMPARE) L2(L2_IDLE/DIR_I)
+T=290 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(COMPARE) L2(L2_IDLE/DIR_I)
+T=310 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(DONE) L2(L2_IDLE/DIR_I)
+T=330 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+======== CACHE DUMP [AFTER TEST 2] @ T=340 ========
+  T0 L1:
+    set=0 way=0 valid=1 tag=0 state=EXCLUSIVE
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T1 L1:
+    set=0 way=0 valid=0 tag=0 state=INVALID
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T0 L2 (ALL 4 sets):
+    set=0 way=0 valid=1 tag=1 state=DIR_E owner=0 sharers=01
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+  T1 L2 (ALL 4 sets):
+    set=0 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+
+>>>>>>>> TEST 4: T0 STORE 0x40 -- write miss (GetM), fetch from memory, MODIFIED directly (L2 set1) <<<<<<<<
+
+T=350 | T0: L1(COMPARE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=370 | T0: L1(COMPARE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=390 | T0: L1(DONE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=410 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+======== CACHE DUMP [AFTER TEST 4] @ T=420 ========
+  T0 L1:
+    set=0 way=0 valid=1 tag=0 state=EXCLUSIVE
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T1 L1:
+    set=0 way=0 valid=0 tag=0 state=INVALID
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T0 L2 (ALL 4 sets):
+    set=0 way=0 valid=1 tag=1 state=DIR_E owner=0 sharers=01
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+  T1 L2 (ALL 4 sets):
+    set=0 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+
+>>>>>>>> TEST 6: T1 LOAD 0x80 -- T1 reads cold from T0's L2 bank (genuine cross-tile MISS fetch, no L1 owner involved) <<<<<<<<
+
+T=430 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(COMPARE) L2(L2_IDLE/DIR_I)
+T=450 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(COMPARE) L2(L2_IDLE/DIR_I)
+T=470 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(DONE) L2(L2_IDLE/DIR_I)
+T=490 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+======== CACHE DUMP [AFTER TEST 6] @ T=500 ========
+  T0 L1:
+    set=0 way=0 valid=1 tag=0 state=EXCLUSIVE
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T1 L1:
+    set=0 way=0 valid=0 tag=0 state=INVALID
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T0 L2 (ALL 4 sets):
+    set=0 way=0 valid=1 tag=1 state=DIR_E owner=0 sharers=01
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+  T1 L2 (ALL 4 sets):
+    set=0 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+T=510 | T0: L1(COMPARE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=530 | T0: L1(COMPARE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=550 | T0: L1(DONE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+T=570 | T0: L1(IDLE) L2(L2_IDLE/DIR_I) | T1: L1(IDLE) L2(L2_IDLE/DIR_I)
+======== CACHE DUMP [AFTER TEST 7] @ T=580 ========
+  T0 L1:
+    set=0 way=0 valid=1 tag=0 state=EXCLUSIVE
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T1 L1:
+    set=0 way=0 valid=0 tag=0 state=INVALID
+    set=0 way=1 valid=0 tag=0 state=INVALID
+    set=1 way=0 valid=0 tag=0 state=INVALID
+    set=1 way=1 valid=0 tag=0 state=INVALID
+    set=2 way=0 valid=0 tag=0 state=INVALID
+    set=2 way=1 valid=0 tag=0 state=INVALID
+    set=3 way=0 valid=0 tag=0 state=INVALID
+    set=3 way=1 valid=0 tag=0 state=INVALID
+  T0 L2 (ALL 4 sets):
+    set=0 way=0 valid=1 tag=1 state=DIR_E owner=0 sharers=01
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+  T1 L2 (ALL 4 sets):
+    set=0 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=0 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=1 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=2 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=0 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=1 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=2 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+    set=3 way=3 valid=0 tag=0 state=DIR_I owner=0 sharers=00
+
+--- FINAL CHECKS ---
+  PASS: T0 L1 0x01 is EXCLUSIVE
+  FAIL: T1 L1 0x15 state=INVALID
+  FAIL: T0 L1 0x40 state=INVALID
+  FAIL: T0 L2 SET1 directory for 0x40 state=DIR_I owner=0
+  FAIL: T1 L1 0x80 state=INVALID
+  FAIL: T0 L2 SET2 directory for 0x80 state=DIR_I owner=0
+  FAIL: T0 L1 0x01 state=EXCLUSIVE
+  INFO: T0 L2 set0 directory for 0x01 shows state=DIR_E (either DIR_E or DIR_M can be correct here depending on whether this design notifies L2 of a silent upgrade -- both mean 'single owner, no sharers' to the directory)
+
+--- done ---
+- Tile_2tb.sv:207: Verilog $finish

@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant C as Core/T1 L1
+    participant M as T1 Mux
+    participant H as T0 Home L2
+    participant N1 as T1 NIC/Router
+    participant N0 as T0 NIC/Router
+    participant MEM as Memory tap
+    C->>M: Load address 0x80
+    M->>H: GETS(addr=0x80), home bank from Addr[5:4]
+    H->>H: L2_COMPARE: directory miss
+    H->>N0: NMSG_MEM_REQ(dest=MEM_ID)
+    N0->>MEM: Memory request packet
+    MEM-->>N0: NMSG_MEM_DATA(data)
+    N0-->>H: Fill data
+    H->>H: Allocate DIR_E, owner=T1
+    H-->>N0: NMSG_DATA(dest=T1, exclusive=1)
+    N0-->>N1: Ring forwarding
+    N1-->>M: Data + exclusive indication
+    M-->>C: Fill L1 as EXCLUSIVE
+    Note over H,C: Controller progression: IDLE → COMPARE → ALLOCATE → DONE

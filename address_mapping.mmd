@@ -1,0 +1,14 @@
+flowchart LR
+    A[8-bit address]
+    A --> L1[L1 decode]
+    A --> L2[L2 decode]
+    L1 --> L1F["Tag: Addr[7:4]<br/>Set: Addr[3:2]<br/>Offset: Addr[1:0]"]
+    L2 --> L2F["Tag: Addr[3:0]<br/>Set: Addr[7:6]<br/>Home bank: Addr[5:4]"]
+    L2F --> B0[Bank 0 / Tile 0]
+    L2F --> B1[Bank 1 / Tile 1]
+    B0 --> D0[Directory entry\nDIR_I / DIR_E / DIR_S / DIR_M\nowner + sharers]
+    B1 --> D1[Directory entry\nDIR_I / DIR_E / DIR_S / DIR_M\nowner + sharers]
+    classDef field fill:#e0f2fe,stroke:#0369a1
+    classDef dir fill:#dcfce7,stroke:#15803d
+    class L1F,L2F field
+    class D0,D1 dir

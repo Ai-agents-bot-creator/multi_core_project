@@ -1,0 +1,49 @@
+%% Two-tile cache/coherence prototype inferred from tile.sv and Tile_2tb.sv
+flowchart LR
+    subgraph T0[Tile 0 — MY_BANK_ID 0]
+        L10[L1 cache\ncontroller + storage + LRU]
+        M0[Mux\nlocal L1 / L2 / NIC]
+        L20[L2 cache\ncontroller + 4-way storage]
+        MT0[Memory tap\npreload + memory service]
+        N0[NIC\npacket FIFO + flit codec]
+        R0[Router 0\nlocal / CW / CCW ports]
+        L10 -->|l1_msg_req / addr / data| M0
+        M0 -->|local request| L20
+        L20 -->|l2_l1_data_o| M0
+        M0 -->|snoop / fill response| L10
+        L20 -->|response or bypass packet| MT0
+        MT0 -->|packet request / response| N0
+        N0 <-->|local flit path| R0
+    end
+
+    subgraph T1[Tile 1 — MY_BANK_ID 1]
+        L11[L1 cache\ncontroller + storage + LRU]
+        M1[Mux\nlocal L1 / L2 / NIC]
+        L21[L2 cache\ncontroller + 4-way storage]
+        MT1[Memory tap\npreload + memory service]
+        N1[NIC\npacket FIFO + flit codec]
+        R1[Router 1\nlocal / CW / CCW ports]
+        L11 -->|l1_msg_req / addr / data| M1
+        M1 -->|local request| L21
+        L21 -->|l2_l1_data_o| M1
+        M1 -->|snoop / fill response| L11
+        L21 -->|response or bypass packet| MT1
+        MT1 -->|packet request / response| N1
+        N1 <-->|local flit path| R1
+    end
+
+    R0 -->|CW: c_out → c_in| R1
+    R1 -->|CW: c_out → c_in| R0
+    R0 -->|CCW: cc_out → cc_in| R1
+    R1 -->|CCW: cc_out → cc_in| R0
+
+    MEM[(Memory service\nrepresented by mem_tap)]
+    MT0 <--> MEM
+    MT1 <--> MEM
+
+    classDef cache fill:#e8f1ff,stroke:#2563eb,stroke-width:1px
+    classDef noc fill:#fff4db,stroke:#c47f00,stroke-width:1px
+    classDef mem fill:#eaf7ea,stroke:#27833b,stroke-width:1px
+    class L10,L11,L20,L21 cache
+    class N0,N1,R0,R1,M0,M1 noc
+    class MT0,MT1,MEM mem
